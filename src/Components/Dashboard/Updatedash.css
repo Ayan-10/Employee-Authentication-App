@@ -1,0 +1,49 @@
+.update-dash-main {
+    display: flex;
+    justify-content: center;
+    /* align-items: flex-start; */
+    align-items: center;
+    flex-direction: column;
+    margin-top: 80px;
+    /* background-color: red;  */
+
+}
+
+.update-dash {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* flex: 1; */
+}
+.das{
+    flex: 1;
+}
+.form-body {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 2rem;
+    padding-top: 2rem;
+    width: 380px;
+    padding: 40px 30px 50px 30px;
+    background: #fff;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 10px;
+
+}
+
+.button-update {
+    align-items: center;
+    margin-top: 2rem;
+    /* margin-left: 2rem; */
+    padding: 0.4rem 1rem;
+    border: none;
+    background-color: rgba(255, 123, 0, 0.824);
+    color: white;
+    font-weight: 600;
+    border-radius: 10px;
+}
