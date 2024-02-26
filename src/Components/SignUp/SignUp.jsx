@@ -72,7 +72,7 @@ const SignUp = () => {
                         <label htmlFor="">Email</label>
                         <input style={{background:"#fff"}}  onChange={onChange} type="email" name="email" className='input-field' placeholder='Enter Your Email' required />
                         <label htmlFor="phone">Contact No.</label>
-                        <input style={{background:"#fff"}}  onChange={onChange} type="tel" name="phone" className='input-field' placeholder='Enter your Ph-no' required />
+                        <input style={{background:"#fff"}}  onChange={onChange} type="tel" pattern="[1-9]{1}[0-9]{9}" name="phone" className='input-field' placeholder='Enter your Ph-no' required />
                         <label htmlFor="">Address</label>
                         <textarea onChange={onChange} name="address" className='input-field' required />
                         {/* <label htmlFor="">Username</label>

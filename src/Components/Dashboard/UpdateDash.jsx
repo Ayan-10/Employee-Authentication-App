@@ -109,7 +109,7 @@ const UpdateDash = () => {
                                 <input type="text" name="email" value={data.email} className='input-field' onChange={onChange} placeholder='Enter Your Email' required />
 
                                 <label htmlFor="phone">Contact No.</label>
-                                <input type="tel" name="phone" value={data.phone} onChange={onChange} className='input-field' placeholder='Enter your Ph-no' required />
+                                <input type="tel" pattern="[1-9]{1}[0-9]{9}" name="phone" value={data.phone} onChange={onChange} className='input-field' placeholder='Enter your Ph-no' required />
                                 <label htmlFor="">Address</label>
                                 <textarea className='input-field' name='address' value={data.address} onChange={onChange} required />
                                 <button className="button-update" >
