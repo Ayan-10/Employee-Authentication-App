@@ -1,8 +1,8 @@
 import React from "react";
 import SignUp from "./Components/SignUp/SignUp";
 import Login from "./Components/Login/Login";
-import Dashboard from "./Components/Dashboard/Dashboard";
-import UpdateDash from "./Components/Dashboard/UpdateDash";
+import Profile from "./Components/Profile/Profile";
+import UpdateDash from "./Components/Profile/UpdateProfile";
 import ForgetPassword from "./Components/ForgetPassword/ForgetPassword";
 import { Routes, Route } from "react-router-dom";
 
@@ -12,12 +12,12 @@ function App() {
     <div className="App" style={{background: "#CFFFF6"}}>
       {/* <SignUp/> */}
       {/* <Login/> */}
-      {/* <Dashboard/> */}
+      {/* <Profile/> */}
       {/* <UpdateDash/> */}
       {/* <ForgetPassword/> */}
       <Routes>
       {/* client Side */}
-      <Route path="/" element={<Dashboard />}/>
+      <Route path="/" element={<Profile />}/>
       <Route path="login" element={<Login/> } />
       <Route path="signup" element={<SignUp/>} />
       <Route path="reset" element={<ForgetPassword/> } />

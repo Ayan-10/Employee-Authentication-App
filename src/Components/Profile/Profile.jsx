@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import '../Dashboard/Dashboard.css'
+import '../Profile/Profile.css'
 import { FaUser } from "react-icons/fa6";
 import Cookies from 'js-cookie';
 import { redirect } from 'react-router-dom';
 import Dropdown from '../Dropdown/DropDown';
 
 
-const Dashboard = () => {
+const Profile = () => {
     let navigate = useNavigate();
     const [data, setData] = useState({});
     const [loading, setLoading] = useState(true);
@@ -54,7 +54,7 @@ const Dashboard = () => {
 
             <div className="dash-header">
                 <div className="dashitems">
-                    User Dashboard
+                    User Profile
                 </div>
                 
                     <Dropdown/>
@@ -91,4 +91,4 @@ const Dashboard = () => {
     )
 }
 
-export default Dashboard
+export default Profile

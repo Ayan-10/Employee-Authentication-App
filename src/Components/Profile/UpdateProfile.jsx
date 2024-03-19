@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import '../Dashboard/Updatedash.css'
+import '../Profile/UpdateProfile.css'
 import { FaUser } from "react-icons/fa6";
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
@@ -7,7 +7,7 @@ import Dropdown from '../Dropdown/DropDown';
 
 
 
-const UpdateDash = () => {
+const UpdateProfile = () => {
     let navigate = useNavigate();
     const [data, setData] = useState({});
     const [loading, setLoading] = useState(false);
@@ -131,4 +131,4 @@ const UpdateDash = () => {
     )
 }
 
-export default UpdateDash
+export default UpdateProfile
