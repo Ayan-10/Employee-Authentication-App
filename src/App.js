@@ -5,6 +5,7 @@ import Profile from "./Components/Profile/Profile";
 import UpdateDash from "./Components/Profile/UpdateProfile";
 import ForgetPassword from "./Components/ForgetPassword/ForgetPassword";
 import { Routes, Route } from "react-router-dom";
+import DashBoard from "./Components/Dashboard/DashBoard";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <Route path="signup" element={<SignUp/>} />
       <Route path="reset" element={<ForgetPassword/> } />
       <Route path="update" element={<UpdateDash/>  } />
+      <Route path="/dashboard" element={<DashBoard />}/>
     </Routes>
     </div>
   );
