@@ -1,5 +1,5 @@
 import React from 'react'
-import '../Dashboard/Updatedash.css'
+import '../Profile/UpdateProfile.css'
 import { FaUser } from "react-icons/fa6";
 import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';

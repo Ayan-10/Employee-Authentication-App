@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import '../DashBorad/DashBoard.css'
+import '../DashBoard/DashBoard.css'
 import { FaUser } from "react-icons/fa6";
 import Cookies from 'js-cookie';
 import { redirect } from 'react-router-dom';
