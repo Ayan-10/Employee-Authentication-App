@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import '../Profile/Profile.css'
 import { FaUser } from "react-icons/fa6";
-import Cookies from 'js-cookie';
 import { redirect } from 'react-router-dom';
 import Dropdown from '../Dropdown/DropDown';
 
@@ -27,7 +26,7 @@ const Profile = () => {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
-                    'token': Cookies.get("token")
+                    'token': sessionStorage.getItem("token")
                 }
             });
             const json = await response.json();
@@ -40,7 +39,7 @@ const Profile = () => {
     }
 
     useEffect(() => {
-        const token = Cookies.get("token");
+        const token = sessionStorage.getItem("token");
         if (!token) navigate("/login")
         //Runs only on the first render
         fetchData(token);

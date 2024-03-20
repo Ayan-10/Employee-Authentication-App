@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import '../SignUp/SignUp.css'
 import img1 from '../../Assests/Sign up-amico.png'
 import { Link, useNavigate } from 'react-router-dom'
-import Cookies from 'js-cookie';
 
 
 
@@ -40,7 +39,7 @@ const SignUp = () => {
         const json = await response.json();
         if(response.status === 200 && json.token) 
         {
-            Cookies.set("token",json.token);
+            sessionStorage.setItem("token",json.token);
         }
         else
         {

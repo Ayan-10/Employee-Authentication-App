@@ -1,7 +1,6 @@
 import React from 'react'
 import '../Profile/UpdateProfile.css'
 import { FaUser } from "react-icons/fa6";
-import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -9,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 const Dropdown = () => {
     let navigate = useNavigate();
     const handleLogout = () => {
-        Cookies.remove('token')
+        sessionStorage.removeItem('token')
         navigate("/login");
     }
     return (

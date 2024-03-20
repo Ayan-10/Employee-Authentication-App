@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import '../Login/Login.css'
 import img1 from '../../Assests/Computer login-bro.png'
 import { Link, useNavigate } from 'react-router-dom'
-import Cookies from 'js-cookie';
 import { FaUser } from "react-icons/fa";
 import { MdPassword } from "react-icons/md";
 
@@ -16,7 +15,7 @@ const Login = () => {
     });
 
     const chkToken = async () => {
-        const token = Cookies.get("token");
+        const token = sessionStorage.getItem("token");
         if (token) {
             const tokenResponse = await fetch(`https://employee-app-3tf1.onrender.com/auth/verification`, {
                 method: 'GET',
@@ -55,7 +54,7 @@ const Login = () => {
         const json = await response.json();
         console.log(json);
         if (response.status === 200 && json.token) {
-            Cookies.set("token", json.token);
+            sessionStorage.setItem("token", json.token);
             navigate("/")
         }
         else {
