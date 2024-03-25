@@ -18,7 +18,7 @@ const Dropdown = () => {
                         <FaUser />
                     </button>
                     <ul className="dropdown-menu">
-                        <li><a className="dropdown-item" href="#" onClick={()=>{navigate("/")}}>My Profile</a></li>
+                        <li><a className="dropdown-item" href="#" onClick={()=>{navigate("/profile")}}>My Profile</a></li>
                         <li><a className="dropdown-item" href="#" onClick={()=>{navigate("/update")}}>Update Profile</a></li>
                         <li><a className="dropdown-item" href="#" onClick={handleLogout}>Logout</a></li>
                     </ul>

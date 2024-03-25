@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import '../Profile/UpdateProfile.css'
 import { FaUser } from "react-icons/fa6";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link, useLocation  } from 'react-router-dom';
 import Dropdown from '../Dropdown/DropDown';
 
 
-
-const UpdateProfile = () => {
+const UpdateUser = () => {
     let navigate = useNavigate();
+    const { state } = useLocation();
     const [data, setData] = useState({});
     const [loading, setLoading] = useState(false);
     const [uloading, setUloading] = useState(false);
@@ -15,6 +15,7 @@ const UpdateProfile = () => {
 
 
     const fetchData = async (token) => {
+        console.log(state.name);
         setLoading(true)
         const tokenResponse = await fetch(`https://employee-app-3tf1.onrender.com/auth/verification`, {
             method: 'GET',
@@ -24,6 +25,7 @@ const UpdateProfile = () => {
             }
         });
         if (tokenResponse.status === 200) {
+           
 
             const tokenJson = await tokenResponse.json();
             const response = await fetch(`https://employee-app-3tf1.onrender.com/api/user`, {
@@ -129,4 +131,4 @@ const UpdateProfile = () => {
     )
 }
 
-export default UpdateProfile
+export default UpdateUser

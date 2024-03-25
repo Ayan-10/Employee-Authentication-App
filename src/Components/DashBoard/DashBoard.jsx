@@ -1,15 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import '../DashBoard/DashBoard.css'
-import { FaUser } from "react-icons/fa6";
-import { redirect } from 'react-router-dom';
+import { FaUserEdit } from "react-icons/fa";
+import { redirectimport, Link } from 'react-router-dom';
 import Dropdown from '../Dropdown/DropDown';
+import ModalTest from '../Modal';
+
+
+// function MyVerticallyCenteredModal(props) {
+
+// }
 
 
 const DashBoard = () => {
     let navigate = useNavigate();
-    const [data, setData] = useState({});
+    const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [modalShow, setModalShow] = useState(false);
+    const [showIndex, setshowIndex] = useState(0);
 
     const fetchData = async (token) => {
         const tokenResponse = await fetch(`https://employee-app-3tf1.onrender.com/auth/verification`, {
@@ -22,7 +30,7 @@ const DashBoard = () => {
         if (tokenResponse.status === 200) {
 
             const tokenJson = await tokenResponse.json();
-            const response = await fetch(`https://employee-app-3tf1.onrender.com/api/user`, {
+            const response = await fetch(`https://employee-app-3tf1.onrender.com/api/users`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -31,9 +39,10 @@ const DashBoard = () => {
             });
             const json = await response.json();
             setData(json.data);
+            // console.log(data);
             setLoading(false)
         }
-        else{
+        else {
             navigate("/login")
         }
     }
@@ -45,7 +54,7 @@ const DashBoard = () => {
         fetchData(token);
     }, []);
 
-    
+
 
     return (
 
@@ -55,36 +64,57 @@ const DashBoard = () => {
                 <div className="dashitems">
                     User Profile
                 </div>
-                
-                    <Dropdown/>
+
+                <Dropdown />
             </div>
             {
                 loading ?
                     "Loading"
                     :
-                    <div className="dash-body">
-                        {/* <h1 className='dash-heading'>My Profile</h1> */}
-                        <div className="dash-main-body">
-                            <div className="drow1">
-                                <div className="item-name">First Name:</div>
-                                <div className="item-content">{data.first_name}</div>
-                                <div className="item-name">Last Name:</div>
-                                <div className="item-content">{data.last_name}</div>
-                            </div>
-                            <div className="row2">
-                                <div className="item-name" style={{ paddingRight: "1rem" }}>Email:</div>
-                                <div className="item-content">{data.email}</div>
-                            </div>
-                            <div className="row2">
-                                <div className="item-name" style={{ paddingRight: "1rem" }}>Ph-no:</div>
-                                <div className="item-content">{data.phone}</div>
-                            </div>
-                            <div className="row2">
-                                <div className="item-name" style={{ paddingRight: "1rem" }}>Address:</div>
-                                <div className="item-content">{data.address}</div>
+                    data.map((item, index) => (
+                        <div className="dash-body">
+                            {/* <h1 className='dash-heading'>My Profile</h1> */}
+                            <div className="dash-main-body">
+                                <div className="drow1">
+                                    <div className="item-name">First Name:</div>
+                                    <div className="item-content">{item.first_name}</div>
+                                    <div className="item-name">Last Name:</div>
+                                    <div className="item-content">{item.last_name}</div>
+                                    <button class style={{ backgroundColor: "white", color: "#57B2FB", border: "none", float: "right" }} onClick={() => { setModalShow(true); setshowIndex(index); }}>
+                                        <FaUserEdit />
+                                    </button>
+                                    {/* <MyVerticallyCenteredModal
+                                        show={modalShow}
+                                        fetchData={data[showIndex]}
+                                        onHide={() => setModalShow(false)}
+                                    /> */}
+                                    {modalShow &&<ModalTest
+                                        show={modalShow}
+                                        fetchData={data[showIndex]}
+                                        onHide={() => setModalShow(false)}
+                                    />}
+                                    {/* <Link to={{
+      pathname: '/update-user',
+      state: {id: 1, name: 'sabaoon', shirt: 'green'}
+    }} ><FaUserEdit /></Link> */}
+                                </div>
+                                <div className="row2">
+                                    <div className="item-name" style={{ paddingRight: "1rem" }}>Email:</div>
+                                    <div className="item-content">{item.email}</div>
+                                </div>
+                                <div className="row2">
+                                    <div className="item-name" style={{ paddingRight: "1rem" }}>Ph-no:</div>
+                                    <div className="item-content">{item.phone}</div>
+                                </div>
+                                <div className="row2">
+                                    <div className="item-name" style={{ paddingRight: "1rem" }}>Address:</div>
+                                    <div className="item-content">{item.address}</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    ))
+
+
             }
         </div>
     )
