@@ -107,6 +107,10 @@ const DashBoard = () => {
                                     <div className="item-content">{item.phone}</div>
                                 </div>
                                 <div className="row2">
+                                    <div className="item-name" style={{ paddingRight: "1rem" }}>Role:</div>
+                                    <div className="item-content">{item.role}</div>
+                                </div>
+                                <div className="row2">
                                     <div className="item-name" style={{ paddingRight: "1rem" }}>Address:</div>
                                     <div className="item-content">{item.address}</div>
                                 </div>
