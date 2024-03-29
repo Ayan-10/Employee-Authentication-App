@@ -67,7 +67,7 @@ const ModalTest = (props)=>{
                     <input type="text" name="last_name" value={data.last_name} onChange={onChange} className='input-field' placeholder='Enter your Last Name' required />
 
                     <label htmlFor="">Email</label>
-                    <input type="text" name="email" value={data.email} className='input-field' onChange={onChange} placeholder='Enter Your Email' required />
+                    <input type="text" name="email" value={data.email} className='input-field' onChange={onChange} placeholder='Enter Your Email' readonly="readonly" required />
                     <label htmlFor="role">Role</label>
                     <select name="role" value={data.role} className="input-field" onChange={onChange}>
                     <option value="user" selected={data.role === 'user'}>User</option>
