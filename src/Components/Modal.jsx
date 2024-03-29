@@ -10,7 +10,7 @@ const ModalTest = (props)=>{
 
     useEffect(() => {
         //Runs only on the first render
-        console.log(props.fetchData);
+        // console.log(props.fetchData);
     }, []);
 
     const onChange = (e) => {
@@ -20,7 +20,7 @@ const ModalTest = (props)=>{
     const handleUpdate = async (e) => {
         e.preventDefault()
         setUloading(true)
-        const response = await fetch(`http://localhost:3003/api/users/edit`, {
+        const response = await fetch(`https://employee-app-3tf1.onrender.com/api/users/edit`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

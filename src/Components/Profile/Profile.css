@@ -15,7 +15,7 @@
 }
 
 
-.dashboard-main{
+.dashboard-main-profile{
     max-width: 100vw;
     height: 100vh;
     display: flex;
@@ -48,7 +48,7 @@
     font-size: 1.2rem;
     cursor: pointer;
 }
-.dash-body{
+.dash-body-profile{
     flex: 1;
     display: flex;
     justify-content: center;
@@ -63,7 +63,7 @@
     color: rgb(97, 96, 96);
     font-size: 1.7rem;
 }
-.dash-main-body{
+.dash-main-body-profile{
     background-color: white;
     width: fit-content;
     padding: 3rem;

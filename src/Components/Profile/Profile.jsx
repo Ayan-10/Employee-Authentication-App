@@ -49,7 +49,7 @@ const Profile = () => {
 
     return (
 
-        <div className='dashboard-main'>
+        <div className='dashboard-main-profile'>
 
             <div className="dash-header">
                 <div className="dashitems">
@@ -62,9 +62,9 @@ const Profile = () => {
                 loading ?
                     "Loading"
                     :
-                    <div className="dash-body">
+                    <div className="dash-body-profile">
                         {/* <h1 className='dash-heading'>My Profile</h1> */}
-                        <div className="dash-main-body">
+                        <div className="dash-main-body-profile">
                             <div className="drow1">
                                 <div className="item-name">First Name:</div>
                                 <div className="item-content">{data.first_name}</div>

@@ -62,7 +62,7 @@ const DashBoard = () => {
 
             <div className="dash-header">
                 <div className="dashitems">
-                    User Profile
+                    Dash Board
                 </div>
 
                 <Dropdown />

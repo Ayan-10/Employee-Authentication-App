@@ -15,7 +15,7 @@ const UpdateUser = () => {
 
 
     const fetchData = async (token) => {
-        console.log(state.name);
+        // console.log(state.name);
         setLoading(true)
         const tokenResponse = await fetch(`https://employee-app-3tf1.onrender.com/auth/verification`, {
             method: 'GET',
